@@ -6,21 +6,23 @@ class Dog
 
   @@all = []
   
-   def self.all
-    @@all
-  end
-
   def initialize(name)
     @name = name
-    @@all << self
-    new.save
+    save
   end
-
+  
   def self.all
-    @@all.each do |dog|
-      puts dog.name
-    end
+    @@all
   end
+def save
+   @@all << self
+  end
+  
+ #def self.all
+    #@@all.each do |dog|
+     # puts dog.name
+    #end
+  #end
 
   def self.clear_all
     @@all.clear
@@ -30,11 +32,10 @@ class Dog
     @@all.each do |dog|
     puts dog.name
   end
-def save
-     self.class.all << self
-  end
 
+  
 end
 end
+
 
 
